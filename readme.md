@@ -53,3 +53,56 @@ Feature categories include customer demographics, plan, usage & billing behavior
 | Random Forest with Feature Engineering | 0.64 | 0.56 | 0.52 | 0.54 |
 | Random Forest without Feature Engineering | 0.64 | 0.64 | 0.50 | 0.56 |
 | XG Boost | 0.65 | 0.58 | 0.52 | 0.55 |
+
+> **Selected Model**: Tuned Logistic Regression - best balance of churn recall and retention strategy.
+
+---
+
+## Business Impact
+
+| Metric | Value |
+|--------|-------|
+| Total churned customers | 10357 |
+| Annual revenue at risk | ₹5.59 Crore |
+| Customers identified by model | 6317 (61% recall) |
+| Customers retained(35% success rate assumed) | 2210 |
+| **Estimated revenue saved** | **₹1.19 Crore/year** |
+| Revenue risk mitigated | 21% |
+
+### High-Value Segment - Top-N targeting
+
+| Target Group | Chirn Rate |
+|--------------|------------|
+| All high-value customers(baseline) | 31% |
+| Top 30% by churn probability | **43%** |
+| Top 50% by vhurn probability | 37% |
+
+---
+
+## Key Insights
+
+**Churn Drivers:**
+- Exposure to competitor offers (strongest signals)
+- New customers (tenure ≤ 12 months)
+- Prepaid plan users
+- Low NPS scores & frequent complaints
+- High complaint resolution time
+
+**Retention Drivers:**
+- High service ratings and NPS
+- Postpaid plan & long-term contracts
+- Long tenure
+
+---
+
+## 🛠️ Tech Stack
+
+**Python**, **Pandas**, **Scikit-learn**, **XG Boost**, **Seaborn**, **Matplotlib**
+
+- **Data Manipulation:** Pandas, Numpy
+- **Visualization:** Matplotlib, Seaborn
+- **Preprocessing:** OneHotEncoder, RobustScaler
+- **ML Models:** Scikit-learn, XGBoost
+- **Model Persistence:** Joblib
+
+---
